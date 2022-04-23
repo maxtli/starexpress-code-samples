@@ -1,0 +1,21 @@
+OPC stands for "overlay parent container" -- the highest-level containwer when there is an overlay on the screen
+
+Class and ID prefixes
+
+a_          page specific area element
+c_          generically styled elements
+c_t_        color theme
+c_ctg-      generic store elements
+c_L-        generic label
+j_          page specific elements of JS importance
+j_link      page link, reroute to data-url attribute
+j_G-        page specific group
+j_i-        indicator label
+j_e-        error message
+j_dy-form   dynamic form (fill with JS drawSearch)
+j_t-        table elements of JS importance
+j_LX-       selector filled with API.php
+j_i-LX-     indicator filled via relation to LX selector
+j_u-        underscore: input
+t_          generic table elements
+j_bmtOp     generic bottom menu operation

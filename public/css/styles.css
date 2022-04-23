@@ -1,0 +1,247 @@
+@font-face {font-family: Nunito; src: url("../fonts/Nunito-Regular.ttf");}
+@font-face {font-family: Overlock; src: url("../fonts/Overlock-Regular.ttf");}
+@font-face {font-family: 'Open Sans'; src: url("../fonts/OpenSans-Regular.ttf");}
+
+/* reset predefined style */
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;    
+    box-sizing: border-box;
+}
+
+/* CSS Variables */
+:root {
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --blue:#6991ac;
+    --facebookblue: #3b5998;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+    --theme: #000FA5;
+
+    --offwhite: #F0F0F0;
+    --red1: #FCEDE8;
+    --red2: #FA919C;
+    --red3: #CC0F37;
+    --yellow1: #FAFAD2;
+    --yellow2: #FBEE93;
+    --yellow3: #EDB400;
+    --green1: #E6FDDA;
+    --green2: #ACF188;
+    --green3: #4EB617;
+    --blue1: #DEFCFE;
+    --blue2: #6FEBF3;
+    --blue3: #17ACB6;
+    --purple1: #F9EEFF;
+    --purple2: #EAAAFF; 
+    --purple3: #bb43e3; 
+    --success: #00B85C;
+    --warning: var(--purple3);
+    --fail: #FF5733;
+    --disabledgrey: #AAAAAA;
+    --menugrey: #676449;
+
+    --stpadding: 5px min(20px, calc(5px + 1vw));
+    --agroscale: min(calc(6px + 0.8vw), 14px);
+    --uberscale: min(3vw, 14px)
+}
+
+
+body{
+    background: white;
+    font: 1.1em/1.5 Open Sans;
+    color: var(--dark);
+    text-align: center; 
+    min-height: calc(100% - 10px);
+}
+
+.wrapper {
+    height: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin-bottom: -4px;
+}
+/* site header */
+header{
+    background: var(--theme);
+    /*overflow: hidden;*/
+    
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 0 10px 5px var(--menugrey);
+    z-index: 5;
+}
+
+#head-logo{
+    width: 90px;
+    height: 50px;
+    float: left;
+    background: url(../images/logo-90.png) no-repeat center;
+    margin: 5px;
+}
+
+/* site navigation */
+nav{
+    float: right;
+}
+
+/* 
+#menu-icon{
+    display: hidden;
+    widows: 40px;
+    height: 40px;
+    background: url(img/favicon32.png) no-repeat center;
+}
+*/
+
+ul {
+    display: none;
+}
+
+nav ul li{
+    font: calc(11px + 0.8vw) 'Overlock';
+    font-weight: bold;
+    padding: 15px 10px;
+}
+
+nav ul li a{  
+  text-decoration: none;
+  color: #f5f5f5;
+}
+
+nav ul li a:hover{
+  color: var(--yellow2);
+}
+/* site footer */
+footer{ 
+  background: var(--theme);
+  width: 100%;
+}
+#footer-bottom{
+    color: var(--light);
+}
+/* end of footer */
+
+#scroll-top{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  font-size: 36px;
+  border-radius: 50%;
+}
+  /* Media Queries */
+@media (max-width: 900px) {
+    :root {
+        --topmgn: 60px;
+        --lrspace: 0vw;
+    }
+  nav:hover ul{  
+    display: block;
+    list-style: none;
+    background: var(--theme);
+    border: 1px solid var(--light);
+    border-radius: 10px;
+    text-align: left;
+    width: 150px;
+    top:50px;
+    position: absolute;
+    right:0;
+    z-index: 11;
+  }
+  nav ul li {
+      font-size: 20px;
+  }
+  .c_ctg-search {
+      width: calc(60vw - 50px);
+  }
+  #menu-icon {
+      position: absolute;
+      right: 10px;
+      top: 15px;
+  }
+}
+@media (min-width: 1024px) {
+  /* for class = inner of all content */
+  .inner {      
+  max-width: 90%;
+  margin: 0 auto;
+  }
+}
+
+@media (min-width: 900px) {
+  :root {
+      --topmgn: 100px;
+      --lrspace:2.5vw;
+  }
+  /* header */
+  header{
+    height: 100px;
+  }
+  #head-logo{
+    width: 150px;
+    height: 78px;
+    background: url(../images/logo-150.png) no-repeat center;
+    margin: 10px;
+  }
+  #menu-icon{
+      display: none;
+  }
+  #main-nav {
+    vertical-align: bottom;
+    height: 100%;
+    line-height: 90px;
+}
+
+  /* navigation */
+  ul {
+      display: inline-block;
+      vertical-align: bottom;
+  }
+
+  nav ul li{
+      display: inline-block;
+      padding: 0px calc(5px + 0.4vw) 0 calc(5px + 0.4vw);
+      vertical-align: bottom;
+  }
+    /* end of navigation */      
+.c_ctg-search {
+    width: calc(45vw - 250px);
+}
+  #footer-nav li::after{
+    content: "|";  
+    color: var(--light);
+    padding-left: 15px;
+  }
+  #footer-nav li:last-child::after{
+    content: "";  
+    margin: 0;
+  }
+}
+
+.c_ctg-search {
+  float: left;
+  margin-left: 1%;
+  height: 100%;
+  position: relative;
+}
+.c_ctg-search > input {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  min-width: 100px;
+  width: 100%;
+  font-size: 1.5em;
+  font-family: 'Open Sans';
+  border: 1px solid black;
+  padding: 3px 0px;
+  text-align: center;
+  font-family: Nunito;
+  border-radius: 20px;
+}
